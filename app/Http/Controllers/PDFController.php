@@ -18,8 +18,8 @@ class PDFController extends Controller
     public function index()
     {
         $data["email"] = "lllason@gmail.com";
-        $data["title"] = "From AI 碗公班";
-        $data["body"] = "This is Demo(陳弘文)";
+        $data["title"] = "From AI 碗公班 ";
+        $data["body"] = "從 Dashboard3 送出　(陳弘文) ";
     
         $pdf = PDF::loadView('emails.myTestMail', $data);
         $data["pdf"] = $pdf;
@@ -27,7 +27,7 @@ class PDFController extends Controller
         Mail::to($data["email"])->send(new MailExample($data));
     
         // dd (dump & die)
-        // dd('Mail sent successfully');
+         dd('Mail sent successfully');
     }
        
 }

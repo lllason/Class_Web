@@ -39,7 +39,7 @@ class ImageGalleryController extends Controller
 
 
     	return back()
-    		->with('success','Image Uploaded successfully.');
+            ->with('success','Image Uploaded successfully.');
     }
 
 

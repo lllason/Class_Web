@@ -33,6 +33,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard2', function () {
+    return Inertia::render('Dashboard2');
+})->middleware(['auth', 'verified'])->name('dashboard2');
+Route::get('/dashboard3', function () {
+    return Inertia::render('Dashboard3');
+})->middleware(['auth', 'verified'])->name('dashboard3');
+
+Route::get('/dashboard4', [ ImageGalleryController::class, 'index' ])->middleware(['auth', 'verified'])->name('dashboard4');
+Route::get('/dashboard5', [ PDFController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard5');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
